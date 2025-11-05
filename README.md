@@ -9,7 +9,7 @@ And finally, how I started to integrate it in my work as a frontend engineer.
 
 There is a lot to tell about AI, so I need to continuously remember myself to focus on Angular here.
 Luckily the Angular team already did a great job on integrating Angular with the AI ecosystem.
-There is already a lot on the offical docs page: https://angular.dev/ai.
+There is already a lot on the official docs page: https://angular.dev/ai.
 
 So why this talk?
 I guess I want to add some background to the whole AI story.
@@ -88,17 +88,48 @@ testing, architecting, clean coding, automating & versioning already is.
 
 ### llms.txt
 
-### rules
+The `llms.txt` is a special file for AI agents.
+It belongs to the same family like the robots.txt.
+But wheras the robots.txt tells search engines what not to crawl,
+the `llms.txt` points to pages with significant information for the models.
+You can make your web-page or web-resources better to search for models if you
+provide a `llms.txt`-file in your web-space.
+
+Angular.dev does the same.
+It provides a `llms.txt` file to help Models to crawl the documentation more efficient to
+provide better and more up to date answers to you.
+
+This is a very easy but effective way in providing actual information about Angular to LLMs.
+Luckily, Markdown is a format most developers are familiar with.
+It is very easy to write and turned to out be consumed and processed by models due to its
+structured syntax.
+
+### rules-files
+
+And you can use Markdown in your projects, too.
+
 
 - https://angular.dev/ai/develop-with-ai#rules-files
 - Make your coding guides in the companies a living standard
 
+### web-codegen-scorer
 
 ### MCP Server
 
-### web-codegen-scorer
 
+## Agentic Workflows
+This topic is not related to Angular any more.
+Nevertheless, I feel it is worth mentioning it.
+Since workflows bring everything we have learned to together.
+Workflows allow an orchestration of multiple Agents to reach a specific goal.
 
+- With CLIs
+  - Gmenini CLI
+  - Claude Code
+  - Cursor CLI
+  - ...
+- With AI SDKs
+  - vercel
 
 ## Backup
 ### My personal AI roadmap
