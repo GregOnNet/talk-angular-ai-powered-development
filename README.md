@@ -269,6 +269,12 @@ What about starting with a supportive Agentic Team:
 
 ### MCP Server
 
+- Angular CLI lets you install an MCP Server
+- The Angular CLI MCP Server is a bridge between your AI Model and https://angular.dev
+- It allows tool calls to search the Angular Documentation
+- I also allows to get most up to date best practices from https://angular.dev
+- In the near future we can expect even more tools... maybe modernizing our Angular App with one tool call, that executes all the migration schematics for us to migrate to the latest Anuglar-APIs
+
 ### My personal AI roadmap
 
 1. Mindset Shift - AI & Developer = 💪⚡
