@@ -1,5 +1,12 @@
 # talk-angular-ai-powered-development
 
+## Start presentation
+
+```bash
+npm install
+npm run dev
+```
+
 ## Goal
 
 This task tells the story of how I started to learn about AI.
