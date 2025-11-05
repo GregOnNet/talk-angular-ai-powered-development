@@ -222,15 +222,28 @@ web-codegen-scorer report
 web-codegen-scorer run --prompt=<generated-app> --env=<path>
 ```
 
-
 - Your Playground: https://github.com/GregOnNet/angular-web-codegen-scorer-playground
 
-## Agentic Workflows
-This topic is not related to Angular anymore.
-Nevertheless, I feel it is worth mentioning it.
-Since workflows bring everything we have learned together.
-Workflows allow an orchestration of multiple Agents to reach a specific goal.
+Now, you have a tool that can proof how well your generated code performs.
+This enables you to take the next step in agentic coding: orchestrating not one but multiple
+agents in a workflow.
 
+## Agentic Workflows
+
+Since Angular gives you the ability you need to build apps supported by AI with confidence,
+you are now able to delegate recurring tasks to your CI/CD-Pipeline.
+Workflows bring everything together, that we have learned so far.
+Workflows allow to orchestrate multiple Agents to reach a specific goal.
+
+But why shall we do it.
+So currently, we are trapped in the quality triangle of software engineering.
+There is quality, cost, time. You cannot optimize all three aspects.
+My personal goal is to let AI help to automatically optimise these aspects where it is ever possible.
+- Quality -> Let AI Ensure Coding Standards and correctly applied architecture
+- Cost -> Let AI lift heavy, recurring tasks that would take hours and days for us to do manually
+- Time -> Let AI generate code, scripts, tests after ensuring the correct setup (e.g. with web-codegen-scorer)
+
+You can use a command line agent or an AI SDK to call your model.
 - With CLIs
   - Gemini CLI
   - Claude Code
@@ -238,6 +251,17 @@ Workflows allow an orchestration of multiple Agents to reach a specific goal.
   - ...
 - With AI SDKs
   - Vercel
+
+Based on your CI/CD you can use various triggers to let your agentic workflows run
+- issue created/edited
+- issue labelled
+- pull request opened
+- cron schedule
+
+What about starting with a supportive Agentic Team:
+- Requirements-Review
+- Coding-Explorer
+- PR-Reviewer
 
 - Your Playground: https://github.com/GregOnNet/agentic-workflow-claude
 
