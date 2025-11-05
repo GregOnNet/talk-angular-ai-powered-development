@@ -2,12 +2,12 @@
 
 ## Goal
 
-This task tells the story how I started to learn about AI.
-How I was struggling, first.
+This task tells the story of how I started to learn about AI.
+How I struggled at first.
 How I was fighting it.
-And finally, how I started to integrate it in my work as a frontend engineer.
+And finally, how I started to integrate it into my work as a frontend engineer.
 
-There is a lot to tell about AI, so I need to continuously remember myself to focus on Angular here.
+There is a lot to tell about AI, so I need to continuously remind myself to focus on Angular here.
 Luckily the Angular team already did a great job on integrating Angular with the AI ecosystem.
 There is already a lot on the official docs page: https://angular.dev/ai.
 
@@ -15,16 +15,16 @@ So why this talk?
 I guess I want to add some background to the whole AI story.
 I want to round things up for the Angular Community.
 
-Frequently we see posts with bad quality on social media.
-AI generated content can be really annoying.
-But we shall not fall into the trap thinking of AI as a threat, only because of people seeking for publicity using it in a bad way.
+Frequently we see posts of poor quality on social media.
+AI-generated content can be really annoying.
+But we shall not fall into the trap of thinking of AI as a threat, only because of people seeking publicity using it in a bad way.
 
-This being said, I will start with **building a healthy mindset when it comes to use AI professionally**.
-Than, I need to shift to Angular's pre-work on integrating the platform with AI Agents (**Angular comes prepared**).
-In this section I will also explain the purpose of instructions and rules.
-Which is the foundation of building an agentic team taking on several tasks like coding, testing, requirements-engineering, review.
-After that I will going to show the Angular CLI MCP server and its capabilities.
-I shall record a video demonstrating how tool calls are made from the Agent to look up bestr practices of Angular.
+This being said, I will start with **building a healthy mindset when it comes to using AI professionally**.
+Then, I need to shift to Angular's pre-work on integrating the platform with AI Agents (**Angular comes prepared**).
+In this section, I will also explain the purpose of instructions and rules.
+This is the foundation of building an agentic team taking on several tasks like coding, testing, requirements-engineering, and review.
+After that I will show the Angular CLI MCP server and its capabilities.
+I will record a video demonstrating how tool calls are made from the Agent to look up best practices of Angular.
 
 ## Building AI Skills
 The following list holds a bunch of topics we can learn as developers to get used to AI.
@@ -70,18 +70,18 @@ But here’s the truth: we cannot control what comes from the outside.
 If the waves keep crashing over us, we can learn to surf them.
 
 And that’s what I chose to do.
-And luckily the Angular team was already choosing AI as an important strategic pillar, too.
+And luckily the Angular team had already chosen AI as an important strategic pillar, too.
 
-From this moment on I started recognising that everyone was talking about less developers or
+From this moment on I started recognizing that everyone was talking about fewer developers or
 bad quality, BUT no one was talking about the potential if we developers start to use AI on our own
 with the proficiency we already bring to the table when it comes to complex technical challenges.
 
-I started using AI-Chats and soon I started working with my first coding agent and I delegated
+I started using AI chats and soon I started working with my first coding agent and I delegated
 small tasks to it.
 
 Guess what, from that moment on I knew that 90% of the messages in social media and even in the press
-was incorrect.
-And from this day on I learned. AI is yet another skill that will be added to our toolbelt, such as
+were incorrect.
+And from this day on, I learned. AI is yet another skill that will be added to our toolbelt, such as
 testing, architecting, clean coding, automating & versioning already is.
 
 ## Angular B-AI-tteries included
@@ -89,60 +89,173 @@ testing, architecting, clean coding, automating & versioning already is.
 ### llms.txt
 
 The `llms.txt` is a special file for AI agents.
-It belongs to the same family like the robots.txt.
-But wheras the robots.txt tells search engines what not to crawl,
+It belongs to the same family as the robots.txt.
+But whereas the robots.txt tells search engines what not to crawl,
 the `llms.txt` points to pages with significant information for the models.
 You can make your web-page or web-resources better to search for models if you
-provide a `llms.txt`-file in your web-space.
+provide a `llms.txt` file in your web-space.
 
 Angular.dev does the same.
-It provides a `llms.txt` file to help Models to crawl the documentation more efficient to
-provide better and more up to date answers to you.
+It provides a `llms.txt` file to help models crawl the documentation more efficiently to
+provide better and more up-to-date answers to you.
 
-This is a very easy but effective way in providing actual information about Angular to LLMs.
+This is a very easy but effective way of providing actual information about Angular to LLMs.
 Luckily, Markdown is a format most developers are familiar with.
-It is very easy to write and turned to out be consumed and processed by models due to its
+It is very easy to write and has turned out to be consumed and processed by models due to its
 structured syntax.
 
 ### rules-files
 
 And you can use Markdown in your projects, too.
+Especially if you want to ensure that certain coding styles or whole architectures are applied.
 
+Imagine you want to start bringing a new feature to life. You need components and services for it and your prompt looks like this:
 
-- https://angular.dev/ai/develop-with-ai#rules-files
-- Make your coding guides in the companies a living standard
+```text
+- Create a component that allows to rate a product from 1-5
+- Therefore, create a service that allows to update the rating
+```
+
+If you review this prompt you are absolutely right if you say:
+"There is a lot of information missing."
+- How should the rating be displayed?
+- When shall the API be called?
+- What is the API endpoint?
+
+Yes, you are right, I hear you, and this can be improved.
+But requirements change and tend to be unique up to a certain point.
+What stays the same are criteria for quality and architecture.
+And this is missing too, right?
+But how do we fit all this information in a single prompt?
+And how do we make sure that we apply our valuable standards for each
+prompt?
+How do we share those instructions?
+Here rule- & instruction files come into play.
+
+These are files written in Markdown.
+Here you can specify your coding guides and best practices.
+
+Coding Agents like Firebase Studio, Cursor, GitHub Copilot, Windsurf, Tabnine load these files and are able to apply those
+instructions to every prompt you send to the model.
+This makes sure that your standards are safely applied and recognized by the model.
+
+The good news is, Angular gets you started quickly with a concise rule file: https://angular.dev/ai/develop-with-ai#rules-files
+
+In this rule file you will note that a lot of the modern Angular
+styles are enforced (signals APIs, `control-flow-syntax`, DI with `inject`).
+
+**Question**: "Do you have coding standards in your company? Have you written them down? Is your project 100% in line with these standards?"
+If the answer is **no**, this is absolutely fine. I never met a team that was able to apply all standards, since they evolve and change over time, too.
+
+Now, with the help of rules or instruction files you are able to define your standards and live them
+at the same time.
+The LLMs will help you code along these standards. You can let models review your code to spot
+mistakes and anti-patterns.
+With the right prompting technique you are even able to let the model refactor your code automatically.
+
+This is how AI makes your coding standards a living standard!
+
+You might say now: "Gregor, thanks for mentioning it, but we already use these markdown files.
+Still, it does not work for us. Sometimes the model messes things up. Sometimes we spot errors
+too late that have been introduced. So, how can we escape that loop?"
+And again, Angular has your back.
+Here is where [web-codegen-scorer](https://github.com/angular/web-codegen-scorer) comes in handy.
 
 ### web-codegen-scorer
 
-### MCP Server
+What is the web-codegen-scorer?
+It is a CLI tool that helps you check how good your prompts and instructions perform.
+To evaluate your instructions the web-codegen-scorer will be fed with
+- a configuration telling which runner and model is used
+- one or more of your instructions (your living coding standards)
+- example prompts to create various example apps
 
+What happens with these ingredients?
+The web-codegen-scorer will by default pick 5 prompts that instruct a model to build an app.
+Your instructions are mixed into each of these prompts as a system prompt.
+5 Apps will be generated in parallel.
+Once an app is built, it gets started in the browser.
+Axe and Lighthouse tests are executed.
+Failing tests such as build errors are reported.
+web-codegen-scorer will make 2 attempts to fix those errors.
+Based on the collected data the generated app is rated.
+A report gets generated that you can inspect.
+Now it's your turn: based on the findings of the report you tweak your instructions.
+You let the evaluation run again.
+All reports are saved in a history.
+This allows you to compare the reports.
+This allows you to do evidence-based testing on your AI setup ❤️.
+
+**configuration**
+```js
+// config.mjs
+import { getBuiltInRatings } from 'web-codegen-scorer';
+
+export default {
+  skipInstall: true,
+  displayName: 'agentic-coding-scorer',
+  clientSideFramework: 'angular',
+  sourceDirectory: 'project',
+  ratings: [...getBuiltInRatings()],
+  generationSystemPrompt: './<your-instructions>.md',
+  executablePrompts: ['./example-prompts/**/*.md'],
+}
+```
+
+**evaluate**
+
+```bash
+export GEMINI_API_KEY="..🤖.." && web-codegen-scorer eval --env=angular-example;
+# OR - setup your own environment
+export GEMINI_API_KEY="..🤖.." && web-codegen-scorer eval --env=./config.mjs;
+```
+
+**report**
+
+```bash
+web-codegen-scorer report
+```
+
+**test generated apps manually**
+
+```bash
+web-codegen-scorer run --prompt=<generated-app> --env=<path>
+```
+
+
+- Your Playground: https://github.com/GregOnNet/angular-web-codegen-scorer-playground
 
 ## Agentic Workflows
-This topic is not related to Angular any more.
+This topic is not related to Angular anymore.
 Nevertheless, I feel it is worth mentioning it.
-Since workflows bring everything we have learned to together.
+Since workflows bring everything we have learned together.
 Workflows allow an orchestration of multiple Agents to reach a specific goal.
 
 - With CLIs
-  - Gmenini CLI
+  - Gemini CLI
   - Claude Code
   - Cursor CLI
   - ...
 - With AI SDKs
-  - vercel
+  - Vercel
+
+- Your Playground: https://github.com/GregOnNet/agentic-workflow-claude
 
 ## Backup
+
+### MCP Server
+
 ### My personal AI roadmap
 
 1. Mindset Shift - AI & Developer = 💪⚡
-1. Chat with LLMs
-1. Let and Agent Code
-1.1 often felt in an endless loop debugging and fixing stuff
-1.2 felt lost in fixing recursion bugs AI had solved before
-1. Understand how LLMs work (good enough)
-1.1 Learned about facilities of Agentic Coding
-1.2 learned how to prevent these facilities
-1. Expand usage of Agents
-1. Include tools to your Development Workflows
-1. Build agentic workflows
-1. ✨ Measure LLM output allowing evidence-based decisions
+2. Chat with LLMs
+3. Let an Agent Code
+   3.1 often found myself in an endless loop debugging and fixing stuff
+   3.2 felt lost in fixing recursion bugs AI had solved before
+4. Understand how LLMs work (good enough)
+   4.1 Learned about capabilities of agentic coding
+   4.2 learned how to prevent these issues
+5. Expand usage of Agents
+6. Include tools to your Development Workflows
+7. Build agentic workflows
+8. ✨ Measure LLM output allowing evidence-based decisions
